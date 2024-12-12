@@ -1,0 +1,72 @@
+<form (ngSubmit)="onSubmit()" class="config-form">
+  <div class="form-fields">
+    <mat-form-field appearance="outline" class="small-input">
+      <mat-label>Total Tickets</mat-label>
+      <input matInput type="number" [(ngModel)]="totalTickets" name="totalTickets" required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="small-input">
+      <mat-label>Ticket Release Rate</mat-label>
+      <input matInput type="number" [(ngModel)]="ticketReleaseRate" name="ticketReleaseRate" required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="small-input">
+      <mat-label>Customer Retrieval Rate</mat-label>
+      <input matInput type="number" [(ngModel)]="customerRetrievalRate" name="customerRetrievalRate" required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="small-input">
+      <mat-label>Max Ticket Capacity</mat-label>
+      <input matInput type="number" [(ngModel)]="maxTicketCapacity" name="maxTicketCapacity" required />
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" class="styled-button" type="submit">
+    Submit Configuration
+  </button>
+  <button mat-raised-button color="accent" (click)="startSystem()">Start System</button>
+</form>
+
+
+<style>
+  .config-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1565c0; /* Blue color */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .small-input {
+    width: 200px; /* Fixed size for input fields */
+  }
+  .styled-button {
+    background-color: #1976d2; /* Material Design blue */
+    color: white; /* Ensure the text is visible on a blue background */
+    font-size: 16px; /* Slightly larger font for better visibility */
+    padding: 10px 20px; /* Add padding for a more prominent button */
+    border-radius: 5px; /* Rounded corners for a softer appearance */
+    text-transform: uppercase; /* Button text in uppercase for better emphasis */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow for a raised effect */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+
+  .styled-button:hover {
+    background-color: #1565c0; /* Darker blue on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+  }
+
+  .styled-button:active {
+    background-color: #0d47a1; /* Even darker blue on click */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+</style>
